@@ -13,7 +13,6 @@
         <div class="walhub-header">
             <h1>
                 <span class="wal">Erotica</span>
-               
             </h1>
             <hr class="gradient-line">
         </div>
@@ -40,68 +39,68 @@
     <div class="footer">© 2025 Erotica. All rights reserved.</div>
 
     <script>
-    // Remove unlock status on page load
-    window.onload = function() {
-        if (!sessionStorage.getItem("linkClicked")) {
-            sessionStorage.removeItem("unlocked");
-        }
-        checkUnlockState();
-    };
-
-    // Check unlock state
-    function checkUnlockState() {
-        let unlocked = sessionStorage.getItem("unlocked");
-        if (unlocked === "true") {
-            document.getElementById("linksContainer").style.display = "block";
-            document.getElementById("shareBtn").textContent = "✅ Done!";
-            document.getElementById("shareBtn").classList.remove("locked");
-            document.getElementById("shareBtn").style.cursor = "default";
-        } else {
-            document.getElementById("linksContainer").style.display = "none";
-            document.getElementById("shareBtn").textContent = "🔒 Share to WhatsApp";
-            document.getElementById("shareBtn").classList.add("locked");
-            document.getElementById("shareBtn").style.cursor = "pointer";
-        }
-    }
-
-    // Share Button Click
-    document.getElementById("shareBtn").addEventListener("click", function() {
-    let shareMessage = encodeURIComponent(
-        "අලුත්ම වැල් එකතුව 🔥🔥\n\n" +
-        "ඔක්කොම වැල් 1000 කට වැඩියි💦\n\n" +
-        "🥵 සිංහල අලුත් වැල\n\n" +
-        "🫣 ලීක් Photos\n\n" +
-        "🥵 හොර ගෑනිට ගහනවා\n\n" +
-        "🍑 අක්කලාට ගහන ඒවා\n\n" +
-        "💋 School සෙස්\n\n" +
-        "⚔️ සිංහල BDSM\n\n" +
-        "👙 ඇන්ටා පාරවල්\n\n" +
-        "👩‍🏫සෙක්සි ටීචර්ස්ලා ට ගහන ඒවා \n\n" +
-        "📸 හොරෙන් වීඩියෝ කරපු වීඩියෝ\n\n" +
-        "වීඩියෝ ඔක්කම බලන්න👇🔞\n\n" +
-        "Link 👉🏻 YOURLINK.COM \n\n" +
-        "Link එක අයින් කරන්න කලින් ඉක්මනට බලන්න🫦\n\n" +);
-
-    let whatsappUrl = "https://api.whatsapp.com/send?text=" + shareMessage;
-    window.open(whatsappUrl, "_blank"); 
-});
-
-
-        // Unlock after sharing
-        setTimeout(function() {
-            sessionStorage.setItem("unlocked", "true");
+        // Remove unlock status on page load
+        window.onload = function() {
+            if (!sessionStorage.getItem("linkClicked")) {
+                sessionStorage.removeItem("unlocked");
+            }
             checkUnlockState();
-        }, 3000);
-    });
+        };
 
-    // Clicking any link keeps the page unlocked
-    document.querySelectorAll(".unlock-link").forEach(link => {
-        link.addEventListener("click", function() {
-            sessionStorage.setItem("unlocked", "true");
-            sessionStorage.setItem("linkClicked", "true");
+        // Check unlock state
+        function checkUnlockState() {
+            let unlocked = sessionStorage.getItem("unlocked");
+            if (unlocked === "true") {
+                document.getElementById("linksContainer").style.display = "block";
+                document.getElementById("shareBtn").textContent = "✅ Done!";
+                document.getElementById("shareBtn").classList.remove("locked");
+                document.getElementById("shareBtn").style.cursor = "default";
+            } else {
+                document.getElementById("linksContainer").style.display = "none";
+                document.getElementById("shareBtn").textContent = "🔒 Share to WhatsApp";
+                document.getElementById("shareBtn").classList.add("locked");
+                document.getElementById("shareBtn").style.cursor = "pointer";
+            }
+        }
+
+        // Share Button Click
+        document.getElementById("shareBtn").addEventListener("click", function() {
+            let shareMessage = encodeURIComponent(
+                
+                "අලුත්ම වැල් එකතුව 🔥🔥\n\n" +
+                "ඔක්කොම වැල් 1000 කට වැඩියි💦\n\n" +
+                "🥵 සිංහල අලුත් වැල\n\n" +
+                "🫣 ලීක් Photos\n\n" +
+                "🥵 හොර ගෑනිට ගහනවා\n\n" +
+                "🍑 අක්කලාට ගහන ඒවා\n\n" +
+                "💋 School සෙස්\n\n" +
+                "⚔️ සිංහල BDSM\n\n" +
+                "👙 ඇන්ටා පාරවල්\n\n" +
+                "👩‍🏫සෙක්සි ටීචර්ස්ලා ට ගහන ඒවා \n\n" +
+                "📸 හොරෙන් වීඩියෝ කරපු වීඩියෝ\n\n" +
+                "වීඩියෝ ඔක්කම බලන්න👇🔞\n\n" +
+                "Link 👉🏻 YOURLINK.COM \n\n" +
+                "Link එක අයින් කරන්න කලින් ඉක්මනට බලන්න🫦\n\n" + 
+                "ඉන්ටර්නෙට් වෙබ් අඩවිය අයෙන්න සමහර වෙලාවට ඔබේ Links භාවිතා කරන්න"
+            );
+
+            let whatsappUrl = "https://api.whatsapp.com/send?text=" + shareMessage;
+            window.open(whatsappUrl, "_blank");
+
+            // Unlock after sharing
+            setTimeout(function() {
+                sessionStorage.setItem("unlocked", "true");
+                checkUnlockState();
+            }, 3000);
         });
-    });
 
+        // Clicking any link keeps the page unlocked
+        document.querySelectorAll(".unlock-link").forEach(link => {
+            link.addEventListener("click", function() {
+                sessionStorage.setItem("unlocked", "true");
+                sessionStorage.setItem("linkClicked", "true");
+            });
+        });
     </script>
 
 </body>
