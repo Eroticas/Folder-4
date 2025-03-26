@@ -65,40 +65,14 @@
 
         // Share Button Click
         document.getElementById("shareBtn").addEventListener("click", function() {
-            let shareMessage = encodeURIComponent(
-                "අලුත්ම වැල් එකතුව 🔥🔥" +
+            let shareMessage = "අලුත්ම වැල් එකතුව 🔥🔥" +
                 "ඔක්කොම වැල් 1000 කට වැඩියි💦\n\n" +
                 "🥵 සිංහල අලුත් වැල\n\n" +
                 "🍑 අක්කලාට ගහන ඒවා\n\n" +
                 "💋 School සෙස්\n\n" +
                 "👙 ඇන්ටා පාරවල්\n\n" +
-                "👩‍🏫සෙක්සි ටීචර්ස්ලා ට ගහන ඒවා \n\n" +
+                "👩‍🏫සෙක්සි ටීචර්ස්ලා ට ගහන ඒවා\n\n" +
                 "📸 හොරෙන් වීඩියෝ කරපු වීඩියෝ\n\n" +
                 "වීඩියෝ ඔක්කම බලන්න👇🔞\n\n" +
-                // Removed the first URL (https://eroticas.github.io/Folder-4/New-Leak-2025.html)
                 "Link එක අයින් කරන්න කලින් ඉක්මනට බලන්න🫦\n\n" + 
-                "ඉන්ටර්නෙට් වෙබ් අඩවිය අයෙන්න සමහර වෙලාවට ඔබේ Links භාවිතා කරන්න"
-            );
-
-            // Now only share the message, not the URL at the start
-            let telegramUrl = "https://t.me/share/url?text=" + shareMessage;
-            window.open(telegramUrl, "_blank");
-
-            // Unlock after sharing
-            setTimeout(function() {
-                sessionStorage.setItem("unlocked", "true");
-                checkUnlockState();
-            }, 3000);
-        });
-
-        // Clicking any link keeps the page unlocked
-        document.querySelectorAll(".unlock-link").forEach(link => {
-            link.addEventListener("click", function() {
-                sessionStorage.setItem("unlocked", "true");
-                sessionStorage.setItem("linkClicked", "true");
-            });
-        });
-    </script>
-
-</body>
-</html>
+                "ඉන්ටර්නෙට් වෙබ් අඩ
