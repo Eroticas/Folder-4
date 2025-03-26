@@ -50,16 +50,18 @@
         // Check unlock state
         function checkUnlockState() {
             let unlocked = sessionStorage.getItem("unlocked");
+            let shareBtn = document.getElementById("shareBtn");
+
             if (unlocked === "true") {
                 document.getElementById("linksContainer").style.display = "block";
-                document.getElementById("shareBtn").textContent = "✅ Done!";
-                document.getElementById("shareBtn").classList.remove("locked");
-                document.getElementById("shareBtn").style.cursor = "default";
+                shareBtn.textContent = "✅ Done!";
+                shareBtn.classList.remove("locked");
+                shareBtn.disabled = true;  // Disable the button to prevent further clicks
             } else {
                 document.getElementById("linksContainer").style.display = "none";
-                document.getElementById("shareBtn").textContent = "🔒 Share to Telegram";
-                document.getElementById("shareBtn").classList.add("locked");
-                document.getElementById("shareBtn").style.cursor = "pointer";
+                shareBtn.textContent = "🔒 Share to Telegram";
+                shareBtn.classList.add("locked");
+                shareBtn.disabled = false; // Enable the button to allow clicking
             }
         }
 
@@ -75,4 +77,30 @@
                 "📸 හොරෙන් වීඩියෝ කරපු වීඩියෝ\n\n" +
                 "වීඩියෝ ඔක්කම බලන්න👇🔞\n\n" +
                 "Link එක අයින් කරන්න කලින් ඉක්මනට බලන්න🫦\n\n" + 
-                "ඉන්ටර්නෙට් වෙබ් අඩ
+                "ඉන්ටර්නෙට් වෙබ් අඩවිය අයෙන්න සමහර වෙලාවට ඔබේ Links භාවිතා කරන්න";
+                
+            // Encoding the message for URL
+            let encodedMessage = encodeURIComponent(shareMessage);
+
+            // Telegram sharing URL
+            let telegramUrl = "https://t.me/share/url?text=" + encodedMessage;
+            window.open(telegramUrl, "_blank");
+
+            // Unlock after sharing
+            setTimeout(function() {
+                sessionStorage.setItem("unlocked", "true");
+                checkUnlockState();
+            }, 3000);
+        });
+
+        // Clicking any link keeps the page unlocked
+        document.querySelectorAll(".unlock-link").forEach(link => {
+            link.addEventListener("click", function() {
+                sessionStorage.setItem("unlocked", "true");
+                sessionStorage.setItem("linkClicked", "true");
+            });
+        });
+    </script>
+
+</body>
+</html>
